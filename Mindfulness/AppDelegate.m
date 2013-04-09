@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MeditationViewController.h"
-#import <DropboxSDK/DropboxSDK.h>
+
 
 @implementation AppDelegate
 @synthesize myData;
@@ -20,20 +20,22 @@
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
+{
+    /*
     DBSession* dbSession =
     [[DBSession alloc]
       initWithAppKey:@"evep3kn4vfjrazr"
       appSecret:@"p8i99p9w14s1q0g"
       root:kDBRootAppFolder];
     [DBSession setSharedSession:dbSession];
-    
+    */
     myData = [[Data alloc] init];
     MeditationViewController *rootView = (MeditationViewController *)self.window.rootViewController;
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    /*
     if ([[DBSession sharedSession] handleOpenURL:url]) {
         if ([[DBSession sharedSession] isLinked]) {
             // At this point you can start making API calls
@@ -41,6 +43,8 @@
         return YES;
     }
     // Add whatever other url handling code your app requires here
+    return NO;
+     */
     return NO;
 }
 
@@ -74,10 +78,10 @@
     UIViewController *rootView = self.window.rootViewController;
     //Try to connect to Dropbox every day
     if (currentTime - lastDropboxConnectionTry > 86400){
-        if (![[DBSession sharedSession] isLinked]) {
+        /*if (![[DBSession sharedSession] isLinked]) {
             [[DBSession sharedSession] linkFromController:rootView];
             lastDropboxConnectionTry = CFAbsoluteTimeGetCurrent();
-        }
+        }*/
     }
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.

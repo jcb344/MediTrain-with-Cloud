@@ -196,21 +196,6 @@ When you are ready to begin, place the earbuds in your ears and adjust them so t
                                     <outlet property="delegate" destination="bp5-0U-BLF" id="65w-IO-3RT"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NMH-Io-Omw">
-                                <rect key="frame" x="20" y="381" width="130" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Dropbox">
-                                    <color key="titleColor" red="0.95686280729999995" green="0.95686280729999995" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLink:" destination="bp5-0U-BLF" eventType="touchUpInside" id="zdJ-Uq-2Tp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jf3-oQ-b0H">
                                 <rect key="frame" x="170" y="381" width="130" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -263,7 +248,6 @@ When you are ready to begin, place the earbuds in your ears and adjust them so t
                     <navigationItem key="navigationItem" id="Pue-w5-uCG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="DropboxButton" destination="NMH-Io-Omw" id="Wd2-4s-PGK"/>
                         <outlet property="button" destination="Jf3-oQ-b0H" id="LSJ-Rx-8fL"/>
                         <outlet property="closeButton" destination="bg7-j2-8cK" id="I5X-Tl-ixZ"/>
                         <outlet property="initalMedTimeTextField" destination="fSW-R2-Dso" id="zCz-tW-7Bu"/>

@@ -17,14 +17,6 @@
 @synthesize timer, initialTrialTime, trialCount, sessionCount, yesIncrement, noDecrement, sessionTime, minTrialTime, numberOfYesBeforeIncreasingMedTime, progress, numberOfSessionInASet, numberOfYes;
 @synthesize subjectID,studyID;
 
-- (DBRestClient *)restClient {
-    if (!restClient) {
-        restClient =
-        [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-        restClient.delegate = self;
-    }
-    return restClient;
-}
 
 - (NSDictionary*) getPlistData: (NSString*)plist {
     
@@ -114,7 +106,7 @@
     
     //Upload to Dropbox
     NSString *destDir = @"/";
-    [[self restClient] uploadFile:[subjectID stringByAppendingString:@".plist"] toPath:destDir fromPath:trialsPath];
+    //[[self restClient] uploadFile:[subjectID stringByAppendingString:@".plist"] toPath:destDir fromPath:trialsPath];
     //[self restClient] load
     
     //Upload to Gazz Lab srevers

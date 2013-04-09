@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67CD3248162668350023D5CE /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CD3247162668350023D5CE /* DropboxSDK.framework */; };
 		9B07889215769F2300F64F82 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B07889115769F2300F64F82 /* Security.framework */; };
 		9B07889415769F5400F64F82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B07889315769F5400F64F82 /* QuartzCore.framework */; };
 		9B0788991576A13D00F64F82 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B0788951576A13D00F64F82 /* blueButton.png */; };
@@ -132,7 +131,6 @@
 				9BEBE01314E274FC0035F2FF /* Foundation.framework in Frameworks */,
 				9BEBE01514E274FC0035F2FF /* CoreGraphics.framework in Frameworks */,
 				9BEBE01714E274FC0035F2FF /* CoreData.framework in Frameworks */,
-				67CD3248162668350023D5CE /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

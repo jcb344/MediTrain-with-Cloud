@@ -90,7 +90,7 @@
     NSString *message = @"Please enter your ";
     
     //if dropbox is connected
-    if ([[DBSession sharedSession] isLinked]) {
+    if (1) {//[[DBSession sharedSession] isLinked]) {
     
         //If user's name is left empty
         if ([subjectIDTextField.text length] == 0 ) {
@@ -193,6 +193,7 @@
 }
 
 - (IBAction)didPressLink:(id)sender {
+    /*
     if (![[DBSession sharedSession] isLinked]) {
         [[DBSession sharedSession] linkFromController:self];
         ad.lastDropboxConnectionTry = CFAbsoluteTimeGetCurrent();
@@ -204,7 +205,7 @@
                               cancelButtonTitle:@"OK"
                               otherButtonTitles:nil];
         [alert show];
-    }
+    }*/
 }
 
 - (void) viewWillAppear:(BOOL)animated
