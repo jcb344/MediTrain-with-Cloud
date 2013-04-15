@@ -24,7 +24,7 @@
 
 -(BOOL)postString:(NSString*)string toAdress:(NSString*)adress{
     BOOL sucsess = NO;
-    //NSLog(string);
+    NSLog(string);
     NSData *postData = [ [NSString stringWithFormat:@"%@",string]  dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:NO];
     NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:adress] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60] ;
@@ -110,10 +110,21 @@
         
         for (int j = 0; j<[keys count]; j++) {
             if (j != ([keys count]-1) ) {
+                if ([[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] isKindOfClass:[NSString class]] ) {
+                    outString = [outString stringByAppendingFormat:@" \"%@\":%@,",[keys objectAtIndex:j],[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] ];
+                }
+                else{
                 outString = [outString stringByAppendingFormat:@" \"%@\":%f,",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                }
             }
             else{
-                outString = [outString stringByAppendingFormat:@" \"%@\":%f",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                if ([[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] isKindOfClass:[NSString class]] ) {
+                    outString = [outString stringByAppendingFormat:@" \"%@\":%@",[keys objectAtIndex:j],[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] ];
+                }
+                else{
+                    outString = [outString stringByAppendingFormat:@" \"%@\":%f",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
+                }
+                
             }
         }
         if (i != ([array count]-1) ) {
