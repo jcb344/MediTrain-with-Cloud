@@ -89,9 +89,13 @@
     }
     //Convert absolute time to NSDate
     NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:time];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];/*
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateStyle:NSDateFormatterShortStyle];    
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+     */
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HHmmssZZ"];
     NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     [dateFormatter setLocale:usLocale];
     
@@ -115,7 +119,7 @@
     }
     [cloud setStudyID:[trials objectForKey:@"studyID"] ];
     [cloud setSubjectID:[trials objectForKey:@"subjectID"]];
-    [cloud postJSONOf:[trials objectForKey:@"data"] toAdress:@"http://cerebrum.ucsf.edu/datapost"];
+    [cloud postJSONOf:[trials objectForKey:@"data"] toAdress:@"https://pulvinar.cin.ucsf.edu"];
 }
 
 -(NSString*)startDate{

@@ -111,7 +111,7 @@
         for (int j = 0; j<[keys count]; j++) {
             if (j != ([keys count]-1) ) {
                 if ([[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] isKindOfClass:[NSString class]] ) {
-                    outString = [outString stringByAppendingFormat:@" \"%@\":%@,",[keys objectAtIndex:j],[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] ];
+                    outString = [outString stringByAppendingFormat:@" \"%@\":\"%@,\"",[keys objectAtIndex:j],[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] ];
                 }
                 else{
                 outString = [outString stringByAppendingFormat:@" \"%@\":%f,",[keys objectAtIndex:j],[[[array objectAtIndex:i] objectForKey:[keys objectAtIndex:j]] floatValue]];
